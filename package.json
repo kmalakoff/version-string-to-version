@@ -1,0 +1,45 @@
+{
+  "name": "version-string-to-version",
+  "version": "0.1.0",
+  "description": "Convert a version string to a released Node.js version (by full or partial semver) or versions (by expression)",
+  "keywords": [
+    "node",
+    "semver",
+    "version",
+    "versions",
+    "version-string"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kmalakoff/version-string-to-version.git"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "compat": "nvs --engines -- mocha-compat test/spec/**/*.test.js  --timeout=9999999",
+    "format": "prettier --write '**/*.js'",
+    "lint": "eslint .",
+    "test": "mocha-compat test/spec/**/*.test.js --timeout=9999999"
+  },
+  "dependencies": {
+    "is-version": "^0.1.1",
+    "lodash.isarray": "^4.0.0",
+    "node-semvers": "^0.4.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.0.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "mocha-compat": "^3.5.5",
+    "nvs": "^0.3.0",
+    "prettier": "^2.0.5"
+  },
+  "engines": {
+    "node": ">=0.8"
+  }
+}
