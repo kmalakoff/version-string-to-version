@@ -1,6 +1,6 @@
 {
   "name": "version-string-to-version",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Convert a version string to a released Node.js version (by full or partial semver) or versions (by expression)",
   "keywords": [
     "node",
@@ -22,7 +22,6 @@
     "test": "mocha-compat test/spec/**/*.test.js --no-timeouts"
   },
   "dependencies": {
-    "is-version": "^0.1.1",
     "lodash.isarray": "^4.0.0",
     "node-semvers": "^0.4.3"
   },
