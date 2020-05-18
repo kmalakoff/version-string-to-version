@@ -54,34 +54,18 @@ describe('promise', function () {
         })
         .catch(done);
     });
-    it('v12.0.1', function (done) {
-      toVersion('v12.0.1')
+    it('v12.1.0', function (done) {
+      toVersion('v12.1.0')
         .then(function (version) {
-          assert.equal(version, 'v12.0.1');
+          assert.equal(version, 'v12.1.0');
           done();
         })
         .catch(done);
     });
-    it('v0.0.0', function (done) {
-      toVersion('v0.0.0')
+    it('12.1.0', function (done) {
+      toVersion('12.1.0')
         .then(function (version) {
-          assert.equal(version, 'v0.0.0');
-          done();
-        })
-        .catch(done);
-    });
-    it('12.0.1', function (done) {
-      toVersion('12.0.1')
-        .then(function (version) {
-          assert.equal(version, 'v12.0.1');
-          done();
-        })
-        .catch(done);
-    });
-    it('0.0.0', function (done) {
-      toVersion('0.0.0')
-        .then(function (version) {
-          assert.equal(version, 'v0.0.0');
+          assert.equal(version, 'v12.1.0');
           done();
         })
         .catch(done);
@@ -109,6 +93,26 @@ describe('promise', function () {
     });
     it('0.0', function (done) {
       toVersion('0.0')
+        .then(function () {
+          assert.ok(false);
+        })
+        .catch(function (err) {
+          assert.ok(!!err);
+          done();
+        });
+    });
+    it('v0.0.0', function (done) {
+      toVersion('v0.0.0')
+        .then(function () {
+          assert.ok(false);
+        })
+        .catch(function (err) {
+          assert.ok(!!err);
+          done();
+        });
+    });
+    it('0.0.0', function (done) {
+      toVersion('0.0.0')
         .then(function () {
           assert.ok(false);
         })
@@ -167,8 +171,8 @@ describe('promise', function () {
           done();
         });
     });
-    it('v12.0.1c', function (done) {
-      toVersion('v12.0.1c')
+    it('v12.1.0c', function (done) {
+      toVersion('v12.1.0c')
         .then(function () {
           assert.ok(false);
         })

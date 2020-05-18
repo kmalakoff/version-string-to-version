@@ -46,31 +46,17 @@ describe('callback', function () {
         done();
       });
     });
-    it('v12.0.1', function (done) {
-      toVersion('v12.0.1', function (err, version) {
+    it('v12.1.0', function (done) {
+      toVersion('v12.1.0', function (err, version) {
         assert.ok(!err);
-        assert.equal(version, 'v12.0.1');
+        assert.equal(version, 'v12.1.0');
         done();
       });
     });
-    it('v0.0.0', function (done) {
-      toVersion('v0.0.0', function (err, version) {
+    it('12.1.0', function (done) {
+      toVersion('12.1.0', function (err, version) {
         assert.ok(!err);
-        assert.equal(version, 'v0.0.0');
-        done();
-      });
-    });
-    it('12.0.1', function (done) {
-      toVersion('12.0.1', function (err, version) {
-        assert.ok(!err);
-        assert.equal(version, 'v12.0.1');
-        done();
-      });
-    });
-    it('0.0.0', function (done) {
-      toVersion('0.0.0', function (err, version) {
-        assert.ok(!err);
-        assert.equal(version, 'v0.0.0');
+        assert.equal(version, 'v12.1.0');
         done();
       });
     });
@@ -92,6 +78,18 @@ describe('callback', function () {
     });
     it('0.0', function (done) {
       toVersion('0.0', function (err) {
+        assert.ok(!!err);
+        done();
+      });
+    });
+    it('v0.0.0', function (done) {
+      toVersion('v0.0.0', function (err, version) {
+        assert.ok(!!err);
+        done();
+      });
+    });
+    it('0.0.0', function (done) {
+      toVersion('0.0.0', function (err, version) {
         assert.ok(!!err);
         done();
       });
@@ -126,8 +124,8 @@ describe('callback', function () {
         done();
       });
     });
-    it('v12.0.1c', function (done) {
-      toVersion('v12.0.1c', function (err) {
+    it('v12.1.0c', function (done) {
+      toVersion('v12.1.0c', function (err) {
         assert.ok(!!err);
         done();
       });
