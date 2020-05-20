@@ -22,7 +22,7 @@
     "test": "mocha-compat test/spec/**/*.test.js --no-timeouts"
   },
   "dependencies": {
-    "lodash.isarray": "^4.0.0",
+    "isarray": "^2.0.5",
     "node-semvers": "^0.4.3"
   },
   "devDependencies": {
