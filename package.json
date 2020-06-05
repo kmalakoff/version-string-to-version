@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "isarray": "^2.0.5",
-    "node-semvers": "^0.4.15"
+    "node-semvers": "^0.4.16"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
