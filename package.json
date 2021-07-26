@@ -1,6 +1,6 @@
 {
   "name": "version-string-to-version",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Convert a version string to a released Node.js version (by full or partial semver) or versions (by expression)",
   "keywords": [
     "node",
@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "isarray": "^2.0.5",
-    "node-semvers": "^0.4.19"
+    "node-semvers": "^0.5.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
@@ -40,6 +40,6 @@
     "prettier": "^2.3.2"
   },
   "engines": {
-    "node": ">=0.8"
+    "node": ">=0.10"
   }
 }
