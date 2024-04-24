@@ -1,6 +1,6 @@
-var resolveVersion = require('./resolveVersion');
+import resolveVersion from './resolveVersion';
 
-module.exports = function versionStringToVersion(versionString, options, callback) {
+export default function versionStringToVersion(versionString, options, callback) {
   if (typeof options === 'function') {
     callback = options;
     options = {};
@@ -8,8 +8,8 @@ module.exports = function versionStringToVersion(versionString, options, callbac
   options = options || {};
 
   if (typeof callback === 'function') return resolveVersion(versionString, options, callback);
-  return new Promise(function (resolve, reject) {
-    versionStringToVersion(versionString, options, function (err, result) {
+  return new Promise((resolve, reject) => {
+    versionStringToVersion(versionString, options, (err, result) => {
       err ? reject(err) : resolve(result);
     });
   });
