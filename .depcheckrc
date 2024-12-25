@@ -1,1 +1,1 @@
-ignores: ["depcheck"]
+ignores: ["version-string-to-version", "depcheck", "ts-dev-stack", "@types/*", "@biomejs/*"]
