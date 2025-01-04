@@ -3,15 +3,18 @@ const assert = require('assert');
 const toVersion = require('version-string-to-version');
 
 describe('promise', () => {
-  const root = typeof global !== 'undefined' ? global : window;
-  let rootPromise;
-  before(() => {
-    rootPromise = root.Promise;
-    root.Promise = require('pinkie-promise');
-  });
-  after(() => {
-    root.Promise = rootPromise;
-  });
+  (() => {
+    // patch and restore promise
+    const root = typeof global !== 'undefined' ? global : window;
+    let rootPromise;
+    before(() => {
+      rootPromise = root.Promise;
+      root.Promise = require('pinkie-promise');
+    });
+    after(() => {
+      root.Promise = rootPromise;
+    });
+  })();
 
   describe('happy path', () => {
     it('v12', async () => {
