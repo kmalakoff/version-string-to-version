@@ -1,6 +1,6 @@
 {
   "name": "version-string-to-version",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "description": "Convert a version string to a released Node.js version (by full or partial semver) or versions (by expression)",
   "keywords": [
     "node",
