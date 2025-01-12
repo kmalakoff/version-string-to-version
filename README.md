@@ -8,12 +8,10 @@ var toVersion = require('version-string-to-version');
 
 // callback
 toVersion('12', function (err, version) {
-  assert.ok(!err, err ? err.message : '');
   assert.equal(version.slice(0, 4), 'v12.');
   done();
 });
 toVersion('>=8', function (err, version) {
-  assert.ok(!err, err ? err.message : '');
   assert.ok(version.length > 1);
 });
 
