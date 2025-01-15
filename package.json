@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "isarray": "^2.0.5",
-    "node-semvers": "^1.3.13"
+    "node-semvers": "^1.3.14"
   },
   "devDependencies": {
     "@types/mocha": "*",
