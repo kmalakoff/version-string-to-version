@@ -1,5 +1,5 @@
 const NodeSemvers = require('node-semvers');
-const isArray = require('isarray');
+const isArray = Array.isArray || ((x) => Object.prototype.toString.call(x) === '[object Array]');
 
 module.exports = function resolveVersion(versionString, options, callback) {
   NodeSemvers.load((err, semvers) => {
