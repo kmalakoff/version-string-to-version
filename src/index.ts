@@ -1,4 +1,4 @@
-import worker from './worker';
+import worker from './worker.cjs';
 
 export default function versionStringToVersion(versionString, options, callback) {
   if (typeof options === 'function') {
