@@ -1,18 +1,20 @@
-const assert = require('assert');
+import assert from 'assert';
+import Pinkie from 'pinkie-promise';
 
-const toVersion = require('version-string-to-version');
+// @ts-ignore
+import toVersion from 'version-string-to-version';
 
 describe('promise', () => {
   (() => {
     // patch and restore promise
-    const root = typeof global !== 'undefined' ? global : window;
-    let rootPromise;
+    // @ts-ignore
+    let rootPromise: Promise;
     before(() => {
-      rootPromise = root.Promise;
-      root.Promise = require('pinkie-promise');
+      rootPromise = global.Promise;
+      global.Promise = Pinkie;
     });
     after(() => {
-      root.Promise = rootPromise;
+      global.Promise = rootPromise;
     });
   })();
 
