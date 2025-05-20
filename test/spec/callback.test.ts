@@ -1,6 +1,7 @@
-const assert = require('assert');
+import assert from 'assert';
 
-const toVersion = require('version-string-to-version');
+// @ts-ignore
+import toVersion from 'version-string-to-version';
 
 describe('callback', () => {
   describe('happy path', () => {
