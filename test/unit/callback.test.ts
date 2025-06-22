@@ -1,69 +1,96 @@
 import assert from 'assert';
 
 // @ts-ignore
-import toVersion from 'version-string-to-version';
+import toVersion, { type VersionResult } from 'version-string-to-version';
 
 describe('callback', () => {
   describe('happy path', () => {
     it('v12', (done) => {
-      toVersion('v12', (err, version) => {
-        if (err) return done(err.message);
+      toVersion('v12', (err?: Error, version?: VersionResult[]): undefined => {
+        if (err) {
+          done(err.message);
+          return;
+        }
         assert.equal(version.slice(0, 4), 'v12.');
         done();
       });
     });
     it('12', (done) => {
-      toVersion('12', (err, version) => {
-        if (err) return done(err.message);
+      toVersion('12', (err?: Error, version?: VersionResult[]): undefined => {
+        if (err) {
+          done(err.message);
+          return;
+        }
         assert.equal(version.slice(0, 4), 'v12.');
         done();
       });
     });
     it('v0', (done) => {
-      toVersion('v0', (err, version) => {
-        if (err) return done(err.message);
+      toVersion('v0', (err?: Error, version?: VersionResult[]): undefined => {
+        if (err) {
+          done(err.message);
+          return;
+        }
         assert.equal(version.slice(0, 3), 'v0.');
         done();
       });
     });
     it('0', (done) => {
-      toVersion('0', (err, version) => {
-        if (err) return done(err.message);
+      toVersion('0', (err?: Error, version?: VersionResult[]): undefined => {
+        if (err) {
+          done(err.message);
+          return;
+        }
         assert.equal(version.slice(0, 3), 'v0.');
         done();
       });
     });
     it('v12.0', (done) => {
-      toVersion('v12.0', (err, version) => {
-        if (err) return done(err.message);
+      toVersion('v12.0', (err?: Error, version?: VersionResult[]): undefined => {
+        if (err) {
+          done(err.message);
+          return;
+        }
         assert.equal(version.slice(0, 6), 'v12.0.');
         done();
       });
     });
     it('12.0', (done) => {
-      toVersion('12.0', (err, version) => {
-        if (err) return done(err.message);
+      toVersion('12.0', (err?: Error, version?: VersionResult[]): undefined => {
+        if (err) {
+          done(err.message);
+          return;
+        }
         assert.equal(version.slice(0, 6), 'v12.0.');
         done();
       });
     });
     it('v12.1.0', (done) => {
-      toVersion('v12.1.0', (err, version) => {
-        if (err) return done(err.message);
+      toVersion('v12.1.0', (err?: Error, version?: VersionResult[]): undefined => {
+        if (err) {
+          done(err.message);
+          return;
+        }
         assert.equal(version, 'v12.1.0');
         done();
       });
     });
     it('12.1.0', (done) => {
-      toVersion('12.1.0', (err, version) => {
-        if (err) return done(err.message);
+      toVersion('12.1.0', (err?: Error, version?: VersionResult[]): undefined => {
+        if (err) {
+          done(err.message);
+          return;
+        }
         assert.equal(version, 'v12.1.0');
         done();
       });
     });
     it('>=8', (done) => {
-      toVersion('>=8', (err, version) => {
-        if (err) return done(err.message);
+      toVersion('>=8', (err?: Error, version?: VersionResult[]): undefined => {
+        if (err) {
+          done(err.message);
+          return;
+        }
         assert.ok(version.length > 1);
         done();
       });
