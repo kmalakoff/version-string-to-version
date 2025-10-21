@@ -1,7 +1,6 @@
 import assert from 'assert';
 import Pinkie from 'pinkie-promise';
 
-// @ts-ignore
 import toVersion from 'version-string-to-version';
 
 describe('promise', () => {
