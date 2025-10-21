@@ -1,6 +1,5 @@
 import assert from 'assert';
 
-// @ts-ignore
 import toVersion, { type VersionResult } from 'version-string-to-version';
 
 describe('callback', () => {
