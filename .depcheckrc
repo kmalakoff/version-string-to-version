@@ -1,1 +1,1 @@
-ignores: ["node-version-use", "ts-dev-stack", "@biomejs/biome", "version-string-to-version"]
+ignores: ["node-version-use", "ts-dev-stack", "version-string-to-version"]
