@@ -7,7 +7,7 @@ describe('callback', () => {
     it('v12', (done) => {
       toVersion('v12', (err?: Error, version?: VersionResult[]): undefined => {
         if (err) {
-          done(err.message);
+          done(err);
           return;
         }
         assert.equal(version.slice(0, 4), 'v12.');
@@ -17,7 +17,7 @@ describe('callback', () => {
     it('12', (done) => {
       toVersion('12', (err?: Error, version?: VersionResult[]): undefined => {
         if (err) {
-          done(err.message);
+          done(err);
           return;
         }
         assert.equal(version.slice(0, 4), 'v12.');
@@ -27,7 +27,7 @@ describe('callback', () => {
     it('v0', (done) => {
       toVersion('v0', (err?: Error, version?: VersionResult[]): undefined => {
         if (err) {
-          done(err.message);
+          done(err);
           return;
         }
         assert.equal(version.slice(0, 3), 'v0.');
@@ -37,7 +37,7 @@ describe('callback', () => {
     it('0', (done) => {
       toVersion('0', (err?: Error, version?: VersionResult[]): undefined => {
         if (err) {
-          done(err.message);
+          done(err);
           return;
         }
         assert.equal(version.slice(0, 3), 'v0.');
@@ -47,7 +47,7 @@ describe('callback', () => {
     it('v12.0', (done) => {
       toVersion('v12.0', (err?: Error, version?: VersionResult[]): undefined => {
         if (err) {
-          done(err.message);
+          done(err);
           return;
         }
         assert.equal(version.slice(0, 6), 'v12.0.');
@@ -57,7 +57,7 @@ describe('callback', () => {
     it('12.0', (done) => {
       toVersion('12.0', (err?: Error, version?: VersionResult[]): undefined => {
         if (err) {
-          done(err.message);
+          done(err);
           return;
         }
         assert.equal(version.slice(0, 6), 'v12.0.');
@@ -67,7 +67,7 @@ describe('callback', () => {
     it('v12.1.0', (done) => {
       toVersion('v12.1.0', (err?: Error, version?: VersionResult[]): undefined => {
         if (err) {
-          done(err.message);
+          done(err);
           return;
         }
         assert.equal(version, 'v12.1.0');
@@ -77,7 +77,7 @@ describe('callback', () => {
     it('12.1.0', (done) => {
       toVersion('12.1.0', (err?: Error, version?: VersionResult[]): undefined => {
         if (err) {
-          done(err.message);
+          done(err);
           return;
         }
         assert.equal(version, 'v12.1.0');
@@ -87,7 +87,7 @@ describe('callback', () => {
     it('>=8', (done) => {
       toVersion('>=8', (err?: Error, version?: VersionResult[]): undefined => {
         if (err) {
-          done(err.message);
+          done(err);
           return;
         }
         assert.ok(version.length > 1);
