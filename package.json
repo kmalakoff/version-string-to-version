@@ -1,6 +1,6 @@
 {
   "name": "version-string-to-version",
-  "version": "1.2.12",
+  "version": "1.2.13",
   "description": "Convert a version string to a released Node.js version (by full or partial semver) or versions (by expression)",
   "keywords": [
     "node",
@@ -40,12 +40,12 @@
     "node-semvers": "^1.5.17"
   },
   "devDependencies": {
-    "@types/mocha": "^10.0.10",
-    "@types/node": "^25.0.1",
-    "node-version-use": "^2.1.5",
-    "pinkie-promise": "^2.0.1",
-    "ts-dev-stack": "^1.21.3",
-    "tsds-config": "^0.2.1"
+    "@types/mocha": "*",
+    "@types/node": "*",
+    "node-version-use": "*",
+    "pinkie-promise": "*",
+    "ts-dev-stack": "*",
+    "tsds-config": "*"
   },
   "engines": {
     "node": ">=0.8"
