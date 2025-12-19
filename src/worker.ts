@@ -4,7 +4,7 @@ const isArray = Array.isArray || ((x) => Object.prototype.toString.call(x) === '
 
 import type { VersionCallback, VersionOptions, VersionResult } from './types.ts';
 
-export default function resolveVersion(versionString: string, options: VersionOptions, callback: VersionCallback): undefined {
+export default function resolveVersion(versionString: string, options: VersionOptions, callback: VersionCallback): void {
   NodeSemvers.load((err, semvers) => {
     if (err) return callback(err);
     const version = semvers.resolve(versionString, options) as VersionResult[];
