@@ -6,19 +6,19 @@ export type * from './types.ts';
 export default function resolveVersion(versionString: string): Promise<VersionResult[]>;
 export default function resolveVersion(versionString: string, options: VersionOptions): Promise<VersionResult[]>;
 
-export default function resolveVersion(versionString: string, callback: VersionCallback): undefined;
-export default function resolveVersion(versionString: string, options: VersionOptions, callback: VersionCallback): undefined;
+export default function resolveVersion(versionString: string, callback: VersionCallback): void;
+export default function resolveVersion(versionString: string, options: VersionOptions, callback: VersionCallback): void;
 
-export default function resolveVersion(versionString: string, options?: VersionOptions | VersionCallback, callback?: VersionCallback): undefined | Promise<VersionResult[]> {
+export default function resolveVersion(versionString: string, options?: VersionOptions | VersionCallback, callback?: VersionCallback): void | Promise<VersionResult[]> {
   if (typeof options === 'function') {
     callback = options as VersionCallback;
     options = {};
   }
   options = options || {};
 
-  if (typeof callback === 'function') return worker(versionString, options, callback) as undefined;
+  if (typeof callback === 'function') return worker(versionString, options, callback);
   return new Promise((resolve, reject) =>
-    worker(versionString, options, (err, result) => {
+    worker(versionString, options as VersionOptions, (err, result) => {
       err ? reject(err) : resolve(result);
     })
   );
