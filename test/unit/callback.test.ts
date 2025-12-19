@@ -5,7 +5,7 @@ import toVersion, { type VersionResult } from 'version-string-to-version';
 describe('callback', () => {
   describe('happy path', () => {
     it('v12', (done) => {
-      toVersion('v12', (err?: Error, version?: VersionResult[]): undefined => {
+      toVersion('v12', (err?: Error, version?: VersionResult[]): void => {
         if (err) {
           done(err);
           return;
@@ -15,7 +15,7 @@ describe('callback', () => {
       });
     });
     it('12', (done) => {
-      toVersion('12', (err?: Error, version?: VersionResult[]): undefined => {
+      toVersion('12', (err?: Error, version?: VersionResult[]): void => {
         if (err) {
           done(err);
           return;
@@ -25,7 +25,7 @@ describe('callback', () => {
       });
     });
     it('v0', (done) => {
-      toVersion('v0', (err?: Error, version?: VersionResult[]): undefined => {
+      toVersion('v0', (err?: Error, version?: VersionResult[]): void => {
         if (err) {
           done(err);
           return;
@@ -35,7 +35,7 @@ describe('callback', () => {
       });
     });
     it('0', (done) => {
-      toVersion('0', (err?: Error, version?: VersionResult[]): undefined => {
+      toVersion('0', (err?: Error, version?: VersionResult[]): void => {
         if (err) {
           done(err);
           return;
@@ -45,7 +45,7 @@ describe('callback', () => {
       });
     });
     it('v12.0', (done) => {
-      toVersion('v12.0', (err?: Error, version?: VersionResult[]): undefined => {
+      toVersion('v12.0', (err?: Error, version?: VersionResult[]): void => {
         if (err) {
           done(err);
           return;
@@ -55,7 +55,7 @@ describe('callback', () => {
       });
     });
     it('12.0', (done) => {
-      toVersion('12.0', (err?: Error, version?: VersionResult[]): undefined => {
+      toVersion('12.0', (err?: Error, version?: VersionResult[]): void => {
         if (err) {
           done(err);
           return;
@@ -65,7 +65,7 @@ describe('callback', () => {
       });
     });
     it('v12.1.0', (done) => {
-      toVersion('v12.1.0', (err?: Error, version?: VersionResult[]): undefined => {
+      toVersion('v12.1.0', (err?: Error, version?: VersionResult[]): void => {
         if (err) {
           done(err);
           return;
@@ -75,7 +75,7 @@ describe('callback', () => {
       });
     });
     it('12.1.0', (done) => {
-      toVersion('12.1.0', (err?: Error, version?: VersionResult[]): undefined => {
+      toVersion('12.1.0', (err?: Error, version?: VersionResult[]): void => {
         if (err) {
           done(err);
           return;
@@ -85,7 +85,7 @@ describe('callback', () => {
       });
     });
     it('>=8', (done) => {
-      toVersion('>=8', (err?: Error, version?: VersionResult[]): undefined => {
+      toVersion('>=8', (err?: Error, version?: VersionResult[]): void => {
         if (err) {
           done(err);
           return;
