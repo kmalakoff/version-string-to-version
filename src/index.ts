@@ -10,15 +10,12 @@ export default function resolveVersion(versionString: string, callback: VersionC
 export default function resolveVersion(versionString: string, options: VersionOptions, callback: VersionCallback): void;
 
 export default function resolveVersion(versionString: string, options?: VersionOptions | VersionCallback, callback?: VersionCallback): void | Promise<VersionResult[]> {
-  if (typeof options === 'function') {
-    callback = options as VersionCallback;
-    options = {};
-  }
-  options = options || {};
+  callback = typeof options === 'function' ? options : callback;
+  options = typeof options === 'function' ? {} : ((options || {}) as VersionOptions);
 
   if (typeof callback === 'function') return worker(versionString, options, callback);
   return new Promise((resolve, reject) =>
-    worker(versionString, options as VersionOptions, (err, result) => {
+    worker(versionString, options, (err, result) => {
       err ? reject(err) : resolve(result);
     })
   );
