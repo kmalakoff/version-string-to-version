@@ -14,9 +14,5 @@ export default function resolveVersion(versionString: string, options?: VersionO
   options = typeof options === 'function' ? {} : ((options || {}) as VersionOptions);
 
   if (typeof callback === 'function') return worker(versionString, options, callback);
-  return new Promise((resolve, reject) =>
-    worker(versionString, options, (err, result) => {
-      err ? reject(err) : resolve(result);
-    })
-  );
+  return new Promise((resolve, reject) => worker(versionString, options, (err, result) => (err ? reject(err) : resolve(result))));
 }
