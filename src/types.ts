@@ -8,4 +8,4 @@ export interface VersionOptions {
   sort?: number;
 }
 
-export type VersionCallback = (err?: Error, results?: VersionResult[]) => void;
+export type VersionCallback = (err?: Error | null, results?: VersionResult[]) => void;
