@@ -5,7 +5,7 @@ import toVersion, { type VersionResult } from 'version-string-to-version';
 describe('callback', () => {
   describe('happy path', () => {
     it('v12', (done) => {
-      toVersion('v12', (err?: Error, version?: VersionResult[]): void => {
+      toVersion('v12', (err?: Error | null, version?: VersionResult[]): void => {
         if (err) return done(err);
         if (!version) return done(new Error('No version'));
         assert.equal(version.slice(0, 4), 'v12.');
@@ -13,7 +13,7 @@ describe('callback', () => {
       });
     });
     it('12', (done) => {
-      toVersion('12', (err?: Error, version?: VersionResult[]): void => {
+      toVersion('12', (err?: Error | null, version?: VersionResult[]): void => {
         if (err) return done(err);
         if (!version) return done(new Error('No version'));
         assert.equal(version.slice(0, 4), 'v12.');
@@ -21,7 +21,7 @@ describe('callback', () => {
       });
     });
     it('v0', (done) => {
-      toVersion('v0', (err?: Error, version?: VersionResult[]): void => {
+      toVersion('v0', (err?: Error | null, version?: VersionResult[]): void => {
         if (err) return done(err);
         if (!version) return done(new Error('No version'));
         assert.equal(version.slice(0, 3), 'v0.');
@@ -29,7 +29,7 @@ describe('callback', () => {
       });
     });
     it('0', (done) => {
-      toVersion('0', (err?: Error, version?: VersionResult[]): void => {
+      toVersion('0', (err?: Error | null, version?: VersionResult[]): void => {
         if (err) return done(err);
         if (!version) return done(new Error('No version'));
         assert.equal(version.slice(0, 3), 'v0.');
@@ -37,7 +37,7 @@ describe('callback', () => {
       });
     });
     it('v12.0', (done) => {
-      toVersion('v12.0', (err?: Error, version?: VersionResult[]): void => {
+      toVersion('v12.0', (err?: Error | null, version?: VersionResult[]): void => {
         if (err) return done(err);
         if (!version) return done(new Error('No version'));
         assert.equal(version.slice(0, 6), 'v12.0.');
@@ -45,7 +45,7 @@ describe('callback', () => {
       });
     });
     it('12.0', (done) => {
-      toVersion('12.0', (err?: Error, version?: VersionResult[]): void => {
+      toVersion('12.0', (err?: Error | null, version?: VersionResult[]): void => {
         if (err) return done(err);
         if (!version) return done(new Error('No version'));
         assert.equal(version.slice(0, 6), 'v12.0.');
@@ -53,7 +53,7 @@ describe('callback', () => {
       });
     });
     it('v12.1.0', (done) => {
-      toVersion('v12.1.0', (err?: Error, version?: VersionResult[]): void => {
+      toVersion('v12.1.0', (err?: Error | null, version?: VersionResult[]): void => {
         if (err) return done(err);
         if (!version) return done(new Error('No version'));
         assert.equal(version, 'v12.1.0');
@@ -61,7 +61,7 @@ describe('callback', () => {
       });
     });
     it('12.1.0', (done) => {
-      toVersion('12.1.0', (err?: Error, version?: VersionResult[]): void => {
+      toVersion('12.1.0', (err?: Error | null, version?: VersionResult[]): void => {
         if (err) return done(err);
         if (!version) return done(new Error('No version'));
         assert.equal(version, 'v12.1.0');
@@ -69,7 +69,7 @@ describe('callback', () => {
       });
     });
     it('>=8', (done) => {
-      toVersion('>=8', (err?: Error, version?: VersionResult[]): void => {
+      toVersion('>=8', (err?: Error | null, version?: VersionResult[]): void => {
         if (err) return done(err);
         if (!version) return done(new Error('No version'));
         assert.ok(version.length > 1);
