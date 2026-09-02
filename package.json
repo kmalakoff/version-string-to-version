@@ -27,7 +27,7 @@
     "version": "tsds version"
   },
   "dependencies": {
-    "node-semvers": "^1.3.33"
+    "node-semvers": "^1.3.34"
   },
   "devDependencies": {
     "@types/mocha": "*",
