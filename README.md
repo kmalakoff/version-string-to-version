@@ -1,24 +1,26 @@
-## version-string-to-version
+# version-string-to-version
 
-Convert a version string to a released Node.js version (by full or partial semver) or versions (by expression)
+Resolve a version string to a released Node.js version, or to all matching versions for a semver expression.
 
+## Install
+
+```sh
+npm install version-string-to-version
 ```
-var assert = require('assert');
-var toVersion = require('version-string-to-version');
 
-// callback
-toVersion('12', function (err, version) {
-  assert.equal(version.slice(0, 4), 'v12.');
-  done();
-});
-toVersion('>=8', function (err, version) {
-  assert.ok(version.length > 1);
+```js
+const toVersion = require('version-string-to-version');
+
+toVersion('12', function (error, version) {
+  if (error) throw error;
+  console.log(version); // e.g. 'v12.22.12'
 });
 
-// promise
-var version = await toVersion('12')
-assert.equal(version.slice(0, 4), 'v12.');
-
-var versions = await toVersion('>=8')
-assert.ok(versions.length > 1);
+(async function () {
+  const version = await toVersion('12');
+  const versions = await toVersion('>=8');
+  console.log(version, versions.length);
+}());
 ```
+
+An exact or partial version resolves to a string. A range such as `>=8` resolves to an array of matching released versions.
